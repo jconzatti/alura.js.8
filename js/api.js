@@ -1,55 +1,59 @@
-const URL_BASE = "http://localhost:3000";
+const URL_BASE = "http://localhost:3000"
+
 const api = {
-    async obterPensamentos(){
-        try {
-            const lRespostaDePensamentos = await axios.get(`${URL_BASE}/pensamentos`);
-            return await lRespostaDePensamentos.data;
-        } catch (lErro) {
-            alert(`Erro ao buscar seus pensamentos! ${lErro.name}: ${lErro.message}`); 
-            throw lErro;   
-        }
-    },
-
-    async obterPensamento(pIDDoPensamento){
-        try {
-            const lRespostaDePensamentos = await axios.get(`${URL_BASE}/pensamentos/${pIDDoPensamento}`);
-            return await lRespostaDePensamentos.data;
-        } catch (lErro) {
-            alert(`Erro ao buscar o pensamento (id ${pIDDoPensamento})! ${lErro.name}: ${lErro.message}`); 
-            throw lErro;   
-        }
-    },
-    
-    async salvarPensamento(pPensamento){
-        try {
-            const lRespostaDePensamentos = await axios.post(`${URL_BASE}/pensamentos`, pPensamento);
-            return await lRespostaDePensamentos.data;
-        } catch (lErro) {
-            alert(`Erro ao salvar pensamento! ${lErro.name}: ${lErro.message}`); 
-            throw lErro;   
-        }
-    },
-
-    async atualizarPensamento(pPensamento){
-        try {
-            const lRespostaDePensamentos = await axios.put(`${URL_BASE}/pensamentos/${pPensamento.id}`,pPensamento);
-            return await lRespostaDePensamentos.data;
-        } catch (lErro) {
-            alert(`Erro ao atualizar pensamento! ${lErro.name}: ${lErro.message}`); 
-            throw lErro;   
-        }
-
-    },
-
-    async excluirPensamento(pIDDoPensamento){
-        try {
-            await axios.delete(`${URL_BASE}/pensamentos/${pIDDoPensamento}`);
-        } catch (lErro) {
-            alert(`Erro ao excluir pensamento! ${lErro.name}: ${lErro.message}`); 
-            throw lErro;   
-        }
-
+  async buscarPensamentos() {
+    try {
+      const response = await axios.get(`${URL_BASE}/pensamentos`)
+      return await response.data
     }
+    catch {
+      alert('Erro ao buscar pensamentos')
+      throw error
+    }
+  },
+
+  async salvarPensamento(pensamento) {
+    try {
+      const response = await axios.post(`${URL_BASE}/pensamentos`, pensamento)
+      return await response.data
+    }
+    catch {
+      alert('Erro ao salvar pensamento')
+      throw error
+    }
+  },
+
+  async buscarPensamentoPorId(id) {
+    try {
+      const response = await axios.get(`${URL_BASE}/pensamentos/${id}`)
+      return await response.data
+    }
+    catch {
+      alert('Erro ao buscar pensamento')
+      throw error
+    }
+  },
+
+  async editarPensamento(pensamento) {
+    try {
+      const response = await axios.put(`${URL_BASE}/pensamentos/${pensamento.id}`, pensamento)
+      return await response.data
+    }
+    catch {
+      alert('Erro ao editar pensamento')
+      throw error
+    }
+  },
+
+  async excluirPensamento(id) {
+    try {
+      const response = await axios.delete(`${URL_BASE}/pensamentos/${id}`)
+    }
+    catch {
+      alert('Erro ao excluir um pensamento')
+      throw error
+    }
+  }
 }
 
-export default api;
+export default api
