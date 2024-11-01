@@ -53,6 +53,21 @@ const api = {
       alert('Erro ao excluir um pensamento')
       throw error
     }
+  },
+
+  async buscarPensamentosPorTermo(pTermo){
+    try {
+      const lPensamentos = await this.buscarPensamentos();
+      const lTermoEmMinusculas = pTermo.toLowerCase();
+      const lPensamentosFiltrados = lPensamentos.filter(lPensamento => {
+        return lPensamento.conteudo.toLowerCase().includes(lTermoEmMinusculas) ||
+          lPensamento.autoria.toLowerCase().includes(lTermoEmMinusculas);  
+      });
+      return lPensamentosFiltrados
+    } catch (lErro) {
+      alert('Erro ao filtrar um pensamento');
+      throw lErro;
+    }
   }
 }
 

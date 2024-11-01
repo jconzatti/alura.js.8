@@ -47,7 +47,7 @@ main {
 }
 
 header {
-  padding: 112px 240px 112px 360px;
+  padding: 112px 60px;
   background: var(--Azul-Dark, #041832);
 }
 
@@ -130,7 +130,7 @@ h2, h3 {
   width: 100%; 
   max-width: 600px; 
   margin: 56px auto 0; 
-  padding: 0 16px; 
+  padding: 0 16px 32px 16px; 
 }
 
 #campo-busca {
