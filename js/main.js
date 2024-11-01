@@ -26,9 +26,9 @@ async function manipularSubmissaoFormulario(event) {
 
   try {
     if (id) {
-      await api.editarPensamento({ id, conteudo, autoria, data })
+      await api.editarPensamento({ id, conteudo, autoria, data, favorito: false })
     } else {
-      await api.salvarPensamento({ conteudo, autoria, data })
+      await api.salvarPensamento({ conteudo, autoria, data, favorito: false })
     }
     ui.renderizarPensamentos()
   } catch {

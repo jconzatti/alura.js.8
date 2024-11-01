@@ -4,84 +4,78 @@
       "id": "2a56",
       "conteudo": "Vc faz TI? Conserta meu celular!",
       "autoria": "Grupo da família",
-      "favorito": false,
-      "data": "2024-10-30T14:21:35Z"
-    },
-    {
-      "id": "4c7d",
-      "conteudo": "sasasa",
-      "autoria": "dadadad",
-      "data": "2024-10-28"
+      "data": "2023-09-20T00:00:00.000Z",
+      "favorito": false
     },
     {
       "id": "68uy",
       "conteudo": "Esse é de laranja que parece de limão, mas tem gosto de tamarindo!",
       "autoria": "Chaves",
-      "favorito": false,
-      "data": "2024-10-30T16:45:53Z"
+      "data": "2024-10-25T00:00:00.000Z",
+      "favorito": false
     },
     {
       "id": "b807",
       "conteudo": "Melhor professor, o fracasso é!",
       "autoria": "Mestre Yoda",
-      "favorito": false,
-      "data": "2024-10-30T17:05:22Z"
+      "data": "2024-10-24T00:00:00.000Z",
+      "favorito": false
     },
     {
       "id": "9f3c",
       "conteudo": "Você não é todo mundo!",
       "autoria": "Mãe",
-      "favorito": true,
-      "data": "2024-10-30T18:12:09Z"
+      "data": "2024-10-21T00:00:00.000Z",
+      "favorito": false
     },
     {
       "id": "6a2b",
       "conteudo": "Foi sem querer querendo!",
       "autoria": "Chaves",
-      "favorito": false,
-      "data": "2024-10-30T19:23:37Z"
+      "data": "1970-05-15T00:00:00.000Z",
+      "favorito": false
     },
     {
       "id": "7e2a",
       "conteudo": "Que a força esteja com você!",
       "autoria": "Mestre Yoda",
-      "favorito": false,
-      "data": "2024-10-30T20:14:47Z"
+      "data": "2020-01-30T00:00:00.000Z",
+      "favorito": false
     },
     {
       "id": "5c8f",
       "conteudo": "Resolver o bug não consegue? Esfriar a cabeça vc deve.",
       "autoria": "Mestre Yoda",
-      "favorito": false,
-      "data": "2024-10-30T21:29:56Z"
+      "data": "2024-10-17T00:00:00.000Z",
+      "favorito": false
     },
     {
       "id": "2d6e",
       "conteudo": "Não faça drama, faça café! :)",
       "autoria": "Dev",
-      "favorito": false,
-      "data": "2024-10-30T22:34:13Z"
+      "data": "2024-10-15T00:00:00.000Z",
+      "favorito": false
     },
     {
       "id": "3f1a",
       "conteudo": "Conserta minha impressora?",
       "autoria": "Grupo da família",
-      "favorito": false,
-      "data": "2024-10-30T23:42:25Z"
+      "data": "2024-10-11T00:00:00.000Z",
+      "favorito": false
     },
     {
       "id": "8b4c",
       "conteudo": "A vingança nunca é plena... mata a alma e a envenena...",
       "autoria": "Seu Madruga",
-      "favorito": false,
-      "data": "2024-10-31T00:18:30Z"
+      "data": "2024-10-31T00:00:00.000Z",
+      "favorito": false
     },
     {
       "id": "584a",
       "conteudo": "Na minha máquina funciona!",
       "autoria": "Dev",
-      "favorito": true,
-      "data": "2024-10-31T01:07:15Z"
+      "data": "2024-10-05T00:00:00.000Z",
+      "favorito": false
     }
   ]
 }
