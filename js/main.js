@@ -1,6 +1,22 @@
 import ui from "./ui.js"
 import api from "./api.js"
 
+function removerEspacos(pTermo){
+  return pTermo.replaceAll(/\s+/g, '')
+}
+
+const REGEX_CONTEUDO = /^[A-Za-z\s]{10,}$/
+
+function validarConteudo(pConteudo){
+  return REGEX_CONTEUDO.test(pConteudo)
+}
+
+const REGEX_AUTORIA = /^[A-Za-z]{3,15}$/
+
+function validarAutoria(pAutoria){
+  return REGEX_AUTORIA.test(pAutoria)
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   ui.renderizarPensamentos()
 
@@ -20,8 +36,22 @@ async function manipularSubmissaoFormulario(event) {
   const autoria = document.getElementById("pensamento-autoria").value
   const data = document.getElementById("pensamento-data").value
 
+  const conteudoSemEspacos = removerEspacos(conteudo)
+  const autoriaSemEspacos = removerEspacos(autoria)
+
+  if (!validarConteudo(conteudoSemEspacos)){
+    alert("Conteúdo inválido!")
+    return
+  }
+
+  if (!validarAutoria(autoriaSemEspacos)){
+    alert("Autoria inválida!")
+    return
+  }
+
   if (!validarData(data)){
     alert("Não é permitido o registro de datas futuras! Selecione outra data!")
+    return
   }
 
   try {
