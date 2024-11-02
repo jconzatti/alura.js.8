@@ -1,6 +1,20 @@
 import ui from "./ui.js"
 import api from "./api.js"
 
+const CojuntoDePensamentos = new Set()
+
+async function AdicionarChaveAoPensamento() {
+  try {
+    const lPensamentos = await api.buscarPensamentos()
+    lPensamentos.forEach(lPensamento => {
+      const lChaveDoPensamento = `${lPensamento.conteudo.trim().toLowerCase()}-${lPensamento.autoria.trim().toLowerCase()}`
+      CojuntoDePensamentos.add(lChaveDoPensamento)
+    })
+  } catch (error) {
+    alert("Erro ao atribuir chave ao pensamento") 
+  }
+}
+
 function removerEspacos(pTermo){
   return pTermo.replaceAll(/\s+/g, '')
 }
@@ -19,6 +33,7 @@ function validarAutoria(pAutoria){
 
 document.addEventListener("DOMContentLoaded", () => {
   ui.renderizarPensamentos()
+  AdicionarChaveAoPensamento()
 
   const formularioPensamento = document.getElementById("pensamento-form")
   const botaoCancelar = document.getElementById("botao-cancelar")
@@ -54,6 +69,12 @@ async function manipularSubmissaoFormulario(event) {
     return
   }
 
+  const lChaveDoPensamento = `${conteudo.trim().toLowerCase()}-${autoria.trim().toLowerCase()}`
+  if (CojuntoDePensamentos.has(lChaveDoPensamento)){
+    alert("Esse pensamento já existe!")
+    return
+  }
+
   try {
     if (id) {
       await api.editarPensamento({ id, conteudo, autoria, data, favorito: false })
@@ -61,6 +82,7 @@ async function manipularSubmissaoFormulario(event) {
       await api.salvarPensamento({ conteudo, autoria, data, favorito: false })
     }
     ui.renderizarPensamentos()
+    AdicionarChaveAoPensamento()
   } catch {
     alert("Erro ao salvar pensamento")
   }

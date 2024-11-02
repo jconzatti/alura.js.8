@@ -76,6 +76,13 @@
       "autoria": "Dev",
       "data": "2024-10-05T00:00:00.000Z",
       "favorito": false
+    },
+    {
+      "id": "bfc3",
+      "conteudo": "Ola mundo JS",
+      "autoria": "Dev",
+      "data": "2024-11-01T00:00:00.000Z",
+      "favorito": false
     }
   ]
 }
